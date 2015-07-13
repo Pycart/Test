@@ -18,6 +18,8 @@ urlpatterns = patterns('',
     url(r'^first_view/$', 'main.views.first_view'),
     url(r'^get_post_but_why/$', 'main.views.get_post_but_why'),
     url(r'^get_post/$', 'main.views.get_post'),
+    url(r'^template_view/$', 'main.views.template_view'),
+
     url(r'^GetPost/$', csrf_exempt(GetPost.as_view())),
 
 )

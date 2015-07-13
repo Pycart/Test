@@ -8,6 +8,26 @@ from django.utils.decorators import method_decorator
 from main.models import State, StateCapital, City
 # Create your views here.
 
+def template_view(request):
+
+    context = {}
+
+    state_city = {}
+
+    states = State.objects.all()
+
+
+    for state in states:
+        cities = state.city_set.filter(name__startswith="A")
+
+        state.name = {state.name: cities}
+
+        state_city.update(state.name)
+
+    context['states'] = state_city
+
+    return render(request, 'template_view.html', context)
+
 def first_view(request, starts_with=None):
 
     states = State.objects.all()

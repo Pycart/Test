@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block body %}
+
+
+
+
+		<div class="row">
+			<div class="col-md-12">
+				
+
+			    {% for state, cities in states.items %}
+
+			    	<h3>{{ state }}</h3>
+
+					{% for city in cities.values %}
+
+
+						{{ city.name }}
+						</br>
+
+					{% endfor %}    	
+
+
+			    {% endfor %}
+		    </div>
+
+		</div>
+
+
+{% endblock %}
