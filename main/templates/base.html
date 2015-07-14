@@ -14,24 +14,55 @@
 </head>  
     <body>
 
+<style>
+	.container {
+		border: 1px solid green;
+	}
 
- 	<div class="container">
+	.row {
+		border: 1px solid red;
+	}
 
-		<div class="row">
+	.col-sm-3,
+	.col-xs-3,
+	.col-md-3 {
+		
+		border: 1px solid blue;
+
+	}
+
+	.container_style {
+		background-color: chartreuse;
+	}
+
+	.row_style {
+		border: 5px solid red;
+	}
+
+	.col_style {
+		background-color: burlywood;
+		min-height: 32px;
+	}
+
+</style>
+
+
+ 	<div class="container container_style">
+
+		<div class="row row_style">
 				{% for state in states %}
 
-
-
-						<div class="col-sm-3 col-md-3">
+						<div class="col-sm-3 col-md-3 col_style">
 							{{ state }}
 						</div>
-
 
 				{% endfor %}
 		</div>
 
     {% block body %}
     {% endblock %}
+
+    </div>
 
     </body>
    
