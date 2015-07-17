@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import admin
-from main.views import GetPost
+from main.views import GetPost, StateListView, CityDetailView, CitySearchView
+
 
 admin.autodiscover()
 
@@ -19,7 +20,16 @@ urlpatterns = patterns('',
     url(r'^get_post_but_why/$', 'main.views.get_post_but_why'),
     url(r'^get_post/$', 'main.views.get_post'),
     url(r'^template_view/$', 'main.views.template_view'),
+    url(r'^city_search/$', 'main.views.city_search'),
+    url(r'^city_create/$', 'main.views.city_create'),
+
 
     url(r'^GetPost/$', csrf_exempt(GetPost.as_view())),
+
+    url(r'^state_list/$', StateListView.as_view()),
+
+    url(r'^cities/(?P<pk>[0-9]+)/$', CityDetailView.as_view()),
+
+    url(r'^CitySearchView/$', CitySearchView.as_view()),
 
 )

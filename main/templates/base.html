@@ -15,7 +15,7 @@
     <body>
 
 <style>
-	.container {
+/*	.container {
 		border: 1px solid green;
 	}
 
@@ -42,7 +42,7 @@
 	.col_style {
 		background-color: burlywood;
 		min-height: 32px;
-	}
+	}*/
 
 </style>
 
@@ -50,13 +50,18 @@
  	<div class="container container_style">
 
 		<div class="row row_style">
-				{% for state in states %}
+		{% comment %}
+				2 {{ states_menu }} 1
+
+				{% for 123 in states_menu %}
+						{{ 123 }}
 
 						<div class="col-sm-3 col-md-3 col_style">
-							{{ state }}
+							{{ 123 }}
 						</div>
 
 				{% endfor %}
+		{% endcomment %}
 		</div>
 
     {% block body %}

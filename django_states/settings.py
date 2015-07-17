@@ -84,6 +84,13 @@ USE_TZ = True
 TEMPLATE_DIRS = os.path.join(BASE_DIR, 'templates')
 
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'django.stuff@gmail.com'
+EMAIL_HOST_PASSWORD = 'xxxxxxx8'
+EMAIL_USE_TLS = True
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
